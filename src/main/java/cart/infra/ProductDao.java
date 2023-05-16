@@ -2,9 +2,8 @@ package cart.infra;
 
 import cart.domain.Product;
 import cart.domain.Products;
-import cart.exception.NotExistElementException;
 import cart.infra.rowmapper.ProductRowMapper;
-import org.springframework.dao.IncorrectResultSizeDataAccessException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
@@ -71,8 +70,8 @@ public class ProductDao extends NamedParameterJdbcDaoSupport {
             Product product = getNamedParameterJdbcTemplate()
                     .queryForObject(query, params, ROW_MAPPER);
             return product;
-        } catch (IncorrectResultSizeDataAccessException e) {
-            throw new NotExistElementException("해당 id에 해당하는 상품이 없습니다.");
+        } catch (EmptyResultDataAccessException e) {
+            throw new EmptyResultDataAccessException("해당 id에 해당하는 상품이 없습니다.", 1);
         }
 
 

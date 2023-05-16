@@ -31,6 +31,7 @@ public class ProductService {
         productDao.create(product);
         return ProductResponse.of(product);
     }
+
     @Transactional
     public ProductResponse updateProduct(ProductRequest productRequest, int id) {
         Product product = getProductById(id);
