@@ -27,7 +27,7 @@ public class ProductAdminApiController {
         this.productService = productService;
     }
 
-    @PostMapping("/create")
+    @PostMapping
     public ResponseEntity<ProductResponse> createProduct(@RequestBody ProductRequest request) {
 
         ProductResponse response = productService.createProduct(request);
@@ -35,15 +35,15 @@ public class ProductAdminApiController {
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<ProductResponse> updateProduct(@RequestBody ProductRequest request, @PathVariable int id) {
         ProductResponse response = productService.updateProduct(request, id);
 
         return ResponseEntity.ok(response);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<ProductResponse> deleteProduct(@PathVariable int id){
+    @DeleteMapping("/{id}")
+    public ResponseEntity<ProductResponse> deleteProduct(@PathVariable int id) {
 
         productService.deleteProduct(id);
 

@@ -29,7 +29,7 @@ public class ProductTestStep {
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .accept(MediaType.APPLICATION_JSON_VALUE)
                 .body(params)
-                .when().post("/products/create")
+                .when().post("/products")
                 .then().log().all()
                 .extract();
     }
@@ -40,7 +40,7 @@ public class ProductTestStep {
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .accept(MediaType.APPLICATION_JSON_VALUE)
                 .body(params)
-                .when().put("/products/update/{id}", id)
+                .when().put("/products/{id}", id)
                 .then().log().all()
                 .extract();
     }
@@ -50,7 +50,7 @@ public class ProductTestStep {
                 .given().log().all()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .accept(MediaType.APPLICATION_JSON_VALUE)
-                .when().delete("/products/delete/{id}", id)
+                .when().delete("/products/{id}", id)
                 .then().log().all()
                 .extract();
     }
