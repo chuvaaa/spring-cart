@@ -34,4 +34,10 @@ public class PageController {
 
         return "admin";
     }
+
+    @GetMapping("/settings")
+    public String settings(Model model) {
+
+        return "settings";
+    }
 }
