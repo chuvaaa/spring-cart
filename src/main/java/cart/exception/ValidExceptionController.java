@@ -1,6 +1,5 @@
 package cart.exception;
 
-import cart.product.controller.dto.ErrorResponse;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

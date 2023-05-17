@@ -1,4 +1,4 @@
-package cart.product.controller.dto;
+package cart.exception;
 
 import lombok.Getter;
 import lombok.Setter;
