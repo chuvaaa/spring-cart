@@ -1,4 +1,4 @@
-package cart.domain;
+package cart.product.domain;
 
 import lombok.Builder;
 import lombok.Getter;

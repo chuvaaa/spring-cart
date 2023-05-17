@@ -1,6 +1,6 @@
-package cart.domain;
+package cart.product.domain;
 
-import cart.controller.dto.ProductResponse;
+import cart.product.controller.dto.ProductResponse;
 import lombok.Getter;
 
 import java.util.List;

@@ -1,10 +1,10 @@
-package cart.application;
+package cart.product.application;
 
-import cart.controller.dto.ProductRequest;
-import cart.controller.dto.ProductResponse;
-import cart.domain.Product;
-import cart.domain.Products;
-import cart.infra.ProductDao;
+import cart.product.controller.dto.ProductRequest;
+import cart.product.controller.dto.ProductResponse;
+import cart.product.domain.Product;
+import cart.product.domain.Products;
+import cart.product.infra.ProductDao;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

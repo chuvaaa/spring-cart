@@ -1,6 +1,6 @@
-package cart.infra.rowmapper;
+package cart.product.infra.rowmapper;
 
-import cart.domain.Product;
+import cart.product.domain.Product;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

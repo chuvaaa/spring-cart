@@ -1,12 +1,9 @@
-package cart.controller;
+package cart;
 
-import cart.application.ProductService;
-import cart.controller.dto.ProductResponse;
+import cart.product.application.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.List;
 
 /**
  * @author minsukim on 2023/05/07
