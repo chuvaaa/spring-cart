@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 /**
  * @author minsukim on 2023/05/07
  * @project jwp-cart
@@ -28,7 +30,7 @@ public class ProductAdminApiController {
     }
 
     @PostMapping
-    public ResponseEntity<ProductResponse> createProduct(@RequestBody ProductRequest request) {
+    public ResponseEntity<ProductResponse> createProduct(@RequestBody @Valid ProductRequest request) {
 
         ProductResponse response = productService.createProduct(request);
 
@@ -36,7 +38,7 @@ public class ProductAdminApiController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ProductResponse> updateProduct(@RequestBody ProductRequest request, @PathVariable int id) {
+    public ResponseEntity<ProductResponse> updateProduct(@RequestBody @Valid ProductRequest request, @PathVariable int id) {
         ProductResponse response = productService.updateProduct(request, id);
 
         return ResponseEntity.ok(response);

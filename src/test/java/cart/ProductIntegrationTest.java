@@ -35,6 +35,24 @@ public class ProductIntegrationTest extends AcceptanceTest {
     }
 
     @Test
+    @DisplayName("상품 생성 실패 테스트.")
+    public void 상품생성_실패_테스트() {
+        String name = "12345678901";
+        Map<String, String> params = new HashMap<>();
+        params.put("name", name);
+        params.put("image", "/users/test");
+        params.put("price", "1000");
+
+        ExtractableResponse<Response> response = 상품_생성요청(params);
+
+        assertAll(
+                () -> assertThat(response.statusCode()).isEqualTo(HttpStatus.BAD_REQUEST.value()),
+                () -> assertThat(response.jsonPath().getString("message")).isEqualTo("10글자를 넘을 수 없습니다")
+        );
+    }
+
+
+    @Test
     @DisplayName("상품 수정 테스트.")
     public void 상품수정_테스트() {
         String name = "update";
@@ -58,7 +76,7 @@ public class ProductIntegrationTest extends AcceptanceTest {
         params.put("name", name);
 
 
-        ExtractableResponse<Response> response = 상품_수정_요청(params, 3);
+        ExtractableResponse<Response> response = 상품_수정_요청(params, 5);
 
         assertAll(
                 () -> assertThat(response.statusCode()).isEqualTo(HttpStatus.BAD_REQUEST.value()),

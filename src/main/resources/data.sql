@@ -1,7 +1,7 @@
 CREATE TABLE PRODUCT
 (
     id         INT            NOT NULL AUTO_INCREMENT,
-    name       VARCHAR(100)   NOT NULL,
+    name       VARCHAR(10)   NOT NULL,
     image      VARCHAR(200)   NOT NULL,
     price      INT            NOT NULL,
     created_dt DATETIME       NOT NULL default current_timestamp,
